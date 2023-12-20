@@ -19,4 +19,5 @@ export interface Post {
         userName: string
     }
     comments?: Comment[]
+    score: number;
 }

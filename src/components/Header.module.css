@@ -21,5 +21,14 @@
 }
 
 .header-actions button {
-    margin-left: 10px;
+    cursor: pointer;
+    margin-left: 30px;
+    padding: 10px 20px;
+    border: 2px solid var(--c-goldenrod);
+    border-radius: 25px;
+    font-family: var(--font-text);
+    text-transform: uppercase;
+}
+.header-actions button:hover {
+   background-color: var(--c-goldenrod);
 }

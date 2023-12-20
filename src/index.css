@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  /* padding */
+
+  --padding-base: 4px;
+
+  --padding-s: 8px;
+  --padding-m: 16px;
+  --padding-l: 24px;
+  --padding-xl: 32px;
+
+  /* font-size */
+  
+  --font-size-base: 16px;
+  --font-size-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-footer: 14px;
+
+  /* colours */
+  
+  --c-bg: #fffcf5;
+  --c-text: #252323;
+  --c-goldenrod: #d2aa37;
+
+  /* fonts */
+
+  --font-text: 'Montserrat', Arial;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
+  background-image: url(https://assets-global.website-files.com/6394edc1cd797257200998bc/6395fa53027db002c510eef5_SHADOW%202.webp);
+  background-size: 100%;
+  color: var(--c-text);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-text);
+  min-height: 100vh;
   }

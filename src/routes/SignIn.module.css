@@ -1,7 +1,9 @@
 .signup-form {
+    border: 2px solid var(--c-goldenrod);
     width: 300px;
-    border: 2px solid black;
+    border-radius: 25px;
     padding: 20px;
+    margin: auto;
     margin-top: 20px;
 }
 
@@ -25,13 +27,20 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: var(--font-size-h2) ;
 }
 
 .form-group button {
+    font-family: var(--font-text);
     width: 100%;
     padding: 10px;
     background-color: black;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: var(--c-goldenrod);
+    color: var(--c-text);
 }

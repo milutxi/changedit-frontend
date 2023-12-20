@@ -57,8 +57,8 @@ const SignUp = () => {
                     <label htmlFor="invitetoken">invite </label>
                     <input type="password" name="password_confirmation" id="password_confirmation" required />
                 </div>
-                <div>
-                    <button type="submit">Create user</button>
+                <div className={classes.formGroup}>
+                    <button className={classes.button} type="submit">Create user</button>
                 </div>
             </Form>
         </div>
