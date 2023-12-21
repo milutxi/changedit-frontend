@@ -45,6 +45,7 @@ const SignUp = () => {
                     <label htmlFor="username">Username</label>
                     <input type="text" name="username" id="username" required />
                 </div>
+           
                 <div className={classes.formGroup}>
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" id="password" required />
@@ -53,10 +54,10 @@ const SignUp = () => {
                     <label htmlFor="password_confirmation">Password confirmation</label>
                     <input type="password" name="password_confirmation" id="password_confirmation" required />
                 </div>
-                <div className={classes.formGroup}>
+                {/* <div className={classes.formGroup}>
                     <label htmlFor="invitetoken">invite </label>
                     <input type="password" name="password_confirmation" id="password_confirmation" required />
-                </div>
+                </div> */}
                 <div className={classes.formGroup}>
                     <button className={classes.button} type="submit">Create user</button>
                 </div>
