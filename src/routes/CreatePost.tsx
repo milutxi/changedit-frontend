@@ -6,15 +6,12 @@ import classes from "./CreatePost.module.css";
 export const action = async ({request}: ActionFunctionArgs) => {
     const formData = await request.formData();
 
-    const postData = Object.fromEntries(formData.entries());
-console.log(postData)
     const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': `Beare ${auth.getJWT()}`,
             },
-            body: JSON.stringify(postData),
+            body: formData,
     });
 
     if(!response.ok) {
@@ -30,7 +27,7 @@ const CreatePost =() => {
     return (
         <div className={classes.createPostForm}>
         <h2>Create post</h2>
-        <Form method="post">
+        <Form method="post" encType="multipart/form-data">
             { error && <p><b>Error:</b>{error.message}</p>}
             <div className={classes.formGroup}>
                 <label htmlFor="title">Title</label>
@@ -43,6 +40,10 @@ const CreatePost =() => {
             <div className={classes.formGroup}>
                 <label htmlFor="body">Body (optional)</label>
                 <textarea name="body" id="body" />
+            </div>
+            <div className={classes.formGroup}>
+                <label htmlFor="image"> Image(optional)</label>
+                <input type="file" name="image" id="image" accept="image/*" />
             </div>
            
             <div>
