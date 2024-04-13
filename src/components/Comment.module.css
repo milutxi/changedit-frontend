@@ -1,0 +1,14 @@
+.commentContainer {
+    padding: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.author {
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+.postedcomment {
+    padding-top: 10px;
+}
