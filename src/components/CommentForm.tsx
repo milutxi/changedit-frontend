@@ -1,8 +1,10 @@
+import classes from "./CommentForm.module.css";
 import { ActionFunctionArgs, useFetcher } from "react-router-dom";
 //import classes from './CommentForm.module.css';
 import auth from "../lib/auth";
 import { Post } from "../types";
 import { useRef } from "react";
+
 
 export const action = async (args: ActionFunctionArgs) => {
     const { postId } = args.params;
@@ -41,18 +43,19 @@ const CommentForm = ({postId} : {postId: string}) => {
 
 
     return (
-        <div>
+        <div className={classes.commentForm}>
             <h3>Leave a comment</h3>
 
             <fetcher.Form method="post" action={`/posts/${postId}/comments`}>
 
-                <div>
+                <div className={classes.comment}>
                     <textarea ref={textareaRef} name="body" id="body" required></textarea>
                 </div>
-                <div>
-                    <button type="submit">Post comment</button>
+                <div className={classes.place}>
+                    <button className={classes.button} type="submit">Post comment</button>
                 </div>
             </fetcher.Form>
+        
         </div>
     )
 }
