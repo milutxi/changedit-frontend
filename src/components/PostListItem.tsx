@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Post } from "../types";
 import classes from "./PostListItem.module.css";
 import VoteComponent from "./Vote";
+import { BiSolidEdit } from "react-icons/bi";
+import { AiTwotoneDelete } from "react-icons/ai";
 
 const PostListItem = ({ post }: { post: Post }) => {
   return (
@@ -30,9 +32,9 @@ const PostListItem = ({ post }: { post: Post }) => {
         )}
       </div>
       <div>
-      <Link to={`/posts/${post._id}/edit`}>Edit</Link>
+      <Link to={`/posts/${post._id}/edit`}><BiSolidEdit /></Link>
     </div>
-      <button>Delete</button>
+      <button><AiTwotoneDelete /></button>
       </div>
     </div>
   )
