@@ -6,6 +6,8 @@ import classes from "./CreatePost.module.css";
 export const action = async ({request}: ActionFunctionArgs) => {
     const formData = await request.formData();
 
+   // console.log('Form Data:', Array.from(formData.entries()));
+
     const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts', {
         method: 'POST',
         headers: {

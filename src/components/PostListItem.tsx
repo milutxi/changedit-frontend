@@ -6,6 +6,7 @@ import { BiSolidEdit } from "react-icons/bi";
 import { AiTwotoneDelete } from "react-icons/ai";
 
 const PostListItem = ({ post }: { post: Post }) => {
+  //console.log(post); // Check post data
   return (
     <div>
     <div className={classes.post}>
@@ -14,8 +15,7 @@ const PostListItem = ({ post }: { post: Post }) => {
         {post.link ? (
           <Link to={post.link}>
             <h2>
-              {post.title}
-              <span className={classes.postUrl}>({post.link})</span>
+              {post.title}<span className={classes.postUrl}>({post.link})</span>
             </h2>
           </Link>
         ) : (
@@ -41,3 +41,5 @@ const PostListItem = ({ post }: { post: Post }) => {
 }
 
 export default PostListItem;
+
+
