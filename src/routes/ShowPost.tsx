@@ -77,7 +77,7 @@ const ShowPost = () => {
         </div>
       </div>
       <CommentForm postId={post._id} />
-      {comments.map((comment) => (
+      {post.comments?.map((comment) => (
         <CommentComponent
           key={comment._id}
           comment={comment}
