@@ -1,45 +1,66 @@
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Comment } from '../types';
+import classes from './Comment.module.css';
 import auth from '../lib/auth';
-import { Comment} from '../types'
-import classes from './Comment.module.css'
+
+interface CommentComponentProps {
+    comment: Comment;
+    commentId: string;
+    postId: string;
+    userId: string;
+    onDelete: () => void;
+}
+
+const CommentComponent: React.FC<CommentComponentProps> = ({ comment, commentId, postId, onDelete, userId }) => {
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+        console.log("userId:", userId);
+        console.log("comment author ID:", comment.author._id);
+    }, [userId, comment.author._id]);
 
 
-const CommentComponent = ({ comment, commentId, postId, onDelete }: {comment: Comment, commentId: string, postId: string, onDelete: () => void}) => {
-    
     const handleDeleteComment = async () => {
+
         const confirmed = window.confirm("Are you sure you want to delete this comment?");
-            if(!confirmed) {
-                return;
-            }
-            
+        if (!confirmed) {
+            return;
+        }
+
         try {
-            // const response = 
-            await fetch(import.meta.env.VITE_BACKEND_URL + '/posts/' + postId + "/comments/" + commentId, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/posts/${postId}/comments/${commentId}`, {
                 headers: {
-                    Authorization: "Bearer" + auth.getJWT(),
+                    Authorization: `Bearer ${auth.getJWT()}`, // Ensure proper Authorization header
                 },
                 method: 'DELETE',
             });
-            console.log ('Comment deleted successfully:', commentId)
- 
-            onDelete(); 
 
-       
+            if (!response.ok) {
+                throw new Error('Failed to delete the comment');
+            }
 
-        }catch (error){
+            console.log('Comment deleted successfully:', commentId);
+            onDelete();
+            navigate(`/posts/${postId}`);
+
+        } catch (error) {
             console.error('Error deleting comment:', error);
         }
-    }
-    
-    
-    return(
+    };
+
+    return (
         <div className={classes.commentContainer}>
             <p className={classes.author}>Comment by: {comment.author.userName}</p>
             <p className={classes.postedcomment}>{comment.body}</p>
-            <div className={classes.deleteComment}>
-                <button onClick={handleDeleteComment} type="button">Delete comment</button>
-            </div>
-        </div>
-    )
-}
+        
+                    <div className={classes.deleteComment}>
 
-export default CommentComponent
+                    <button onClick={handleDeleteComment} type="button">Delete comment</button>
+            </div>
+                
+        </div>
+    );
+};
+
+export default CommentComponent;

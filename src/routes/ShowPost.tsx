@@ -80,6 +80,7 @@ const ShowPost = () => {
       {post.comments?.map((comment) => (
         <CommentComponent
           key={comment._id}
+          userId={post._id}
           comment={comment}
           commentId={comment._id}
           postId={post._id}
