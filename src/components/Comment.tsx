@@ -22,7 +22,7 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ comment, commentId,
 
 
     const handleDeleteComment = async () => {
-
+              
         const confirmed = window.confirm("Are you sure you want to delete this comment?");
         if (!confirmed) {
             return;

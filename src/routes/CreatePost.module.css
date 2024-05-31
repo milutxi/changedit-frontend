@@ -48,4 +48,9 @@
     color: red;
     font-size: 14px;
     margin-bottom: 10px;
+    
+  }
+
+  .errorp {
+    padding: 10px 0px;
   }
