@@ -1,17 +1,17 @@
 .vote {
-    text-align: center;
-    margin-right: 10px;
-  }
-  
-  .vote button {
-    font-size: small;
-    display: block;
-    margin-bottom: 5px;
-    padding: 5px;
-    border-radius: 50%;
-    border-color: var(--c-goldenrod);
-    cursor: pointer;
-  }
-  .vote button:hover {
-    background-color: var(--c-goldenrod) ;
-  }
+  text-align: center;
+  margin-right: 10px;
+}
+
+.vote button {
+  font-size: small;
+  display: block;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 50%;
+  border-color: var(--c-goldenrod);
+  cursor: pointer;
+}
+.vote button:hover {
+  background-color: var(--c-goldenrod);
+}

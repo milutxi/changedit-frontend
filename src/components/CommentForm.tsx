@@ -5,59 +5,59 @@ import auth from "../lib/auth";
 import { Post } from "../types";
 import { useRef } from "react";
 
-
 export const action = async (args: ActionFunctionArgs) => {
-    const { postId } = args.params;
-    const formData = await args.request.formData();
+  const { postId } = args.params;
+  const formData = await args.request.formData();
 
-    const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts/' + postId + '/comments/', {
-        headers: {
-            "Content-Type": 'application/json',
-            'Authorization': 'Bearer ' + auth.getJWT(),  // eller  `Bearer${auth.getJWT()}`;
-       },
-       method: 'POST',
-       body: JSON.stringify({ commentBody: formData.get('body')})
-    });
-
-    if(!response.ok) {
-        const { message } = await response.json();
-
-        return { message };
+  const response = await fetch(
+    import.meta.env.VITE_BACKEND_URL + "/posts/" + postId + "/comments/",
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + auth.getJWT(), // eller  `Bearer${auth.getJWT()}`;
+      },
+      method: "POST",
+      body: JSON.stringify({ commentBody: formData.get("body") }),
     }
+  );
 
-    const post = await response.json() as Post;
+  if (!response.ok) {
+    const { message } = await response.json();
 
-    return{
-        comments: post.comments
-    }
-}
+    return { message };
+  }
 
-const CommentForm = ({postId} : {postId: string}) => {
-    const fetcher = useFetcher({ key: 'comment-form-' + postId})
-    const textareaRef = useRef<HTMLTextAreaElement>(null);
-   
+  const post = (await response.json()) as Post;
 
-   if(fetcher.data && textareaRef.current) {
-        textareaRef.current.value = '';
-   }
+  return {
+    comments: post.comments,
+  };
+};
 
+const CommentForm = ({ postId }: { postId: string }) => {
+  const fetcher = useFetcher({ key: "comment-form-" + postId });
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-    return (
-        <div className={classes.commentForm}>
-            <h3>Leave a comment</h3>
+  if (fetcher.data && textareaRef.current) {
+    textareaRef.current.value = "";
+  }
 
-            <fetcher.Form method="post" action={`/posts/${postId}/comments`}>
+  return (
+    <div className={classes.commentForm}>
+      <h3>Leave a comment</h3>
 
-                <div className={classes.comment}>
-                    <textarea ref={textareaRef} name="body" id="body" required></textarea>
-                </div>
-                <div className={classes.place}>
-                    <button className={classes.button} type="submit">Post comment</button>
-                </div>
-            </fetcher.Form>
-        
+      <fetcher.Form method="post" action={`/posts/${postId}/comments`}>
+        <div className={classes.comment}>
+          <textarea ref={textareaRef} name="body" id="body" required></textarea>
         </div>
-    )
-}
+        <div className={classes.place}>
+          <button className={classes.button} type="submit">
+            Post comment
+          </button>
+        </div>
+      </fetcher.Form>
+    </div>
+  );
+};
 
 export default CommentForm;

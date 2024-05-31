@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 :root {
   /* padding */
@@ -11,21 +11,21 @@
   --padding-xl: 32px;
 
   /* font-size */
-  
+
   --font-size-base: 16px;
   --font-size-h1: 32px;
   --font-size-h2: 24px;
   --font-size-footer: 14px;
 
   /* colours */
-  
+
   --c-bg: #fffcf5;
   --c-text: #252323;
   --c-goldenrod: #d2aa37;
 
   /* fonts */
 
-  --font-text: 'Montserrat', Arial;
+  --font-text: "Montserrat", Arial;
 }
 
 * {
@@ -44,4 +44,4 @@ body {
   min-height: 100vh;
   max-width: 800px;
   margin: auto;
-  }
+}

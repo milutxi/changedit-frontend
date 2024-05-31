@@ -11,14 +11,18 @@ import Index, { loader as indexLoader } from "./routes/index.tsx";
 import SignUp, { action as signUpAction } from "./routes/SignUp.tsx";
 import SignIn, { action as signInAction } from "./routes/SignIn.tsx";
 import auth from "./lib/auth.ts";
-import CreatePost, { action as createPostAction,} from "./routes/CreatePost.tsx";
+import CreatePost, {
+  action as createPostAction,
+} from "./routes/CreatePost.tsx";
 import RequireAuth from "./components/RequiredAuth.tsx";
 import ShowPost, { loader as showPostLoader } from "./routes/ShowPost.tsx";
 import { action as createCommentAction } from "./components/CommentForm.tsx";
 import { action as voteAction } from "./components/Vote.tsx";
-import PostEdit, {action as editPostAction, loader as editPostLoader } from "./routes/EditPost.tsx";
+import PostEdit, {
+  action as editPostAction,
+  loader as editPostLoader,
+} from "./routes/EditPost.tsx";
 import { action as deletePostAction } from "./routes/DeletePostAction.ts";
-
 
 const router = createBrowserRouter([
   {
@@ -63,13 +67,13 @@ const router = createBrowserRouter([
           {
             path: "/posts/:id/edit",
             loader: editPostLoader,
-             action: editPostAction,
-            element: <PostEdit /> 
+            action: editPostAction,
+            element: <PostEdit />,
           },
           {
-						path: "/posts/:postId/delete",
-						action: deletePostAction,
-					},
+            path: "/posts/:postId/delete",
+            action: deletePostAction,
+          },
           {
             path: "/posts/:postId/comments",
             action: createCommentAction,

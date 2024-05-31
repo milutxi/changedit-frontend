@@ -1,46 +1,46 @@
 .signup-form {
-    border: 2px solid var(--c-goldenrod);
-    width: 300px;
-    border-radius: 25px;
-    padding: 20px;
-    margin: auto;
-    margin-top: 20px;
+  border: 2px solid var(--c-goldenrod);
+  width: 300px;
+  border-radius: 25px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .signup-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .form-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: var(--font-size-h2) ;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: var(--font-size-h2);
 }
 
 .form-group button {
-    font-family: var(--font-text);
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
+  font-family: var(--font-text);
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .form-group button:hover {
-    background-color: var(--c-goldenrod);
-    color: var(--c-text);
+  background-color: var(--c-goldenrod);
+  color: var(--c-text);
 }

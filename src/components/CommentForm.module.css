@@ -1,27 +1,27 @@
 .comment textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    height: 80px;
-    box-sizing: border-box;
-    font-family: var(--font-text);
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  height: 80px;
+  box-sizing: border-box;
+  font-family: var(--font-text);
 }
 
 .place {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .button {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: 2px solid var(--c-goldenrod);
-    border-radius: 25px;
-    font-family: var(--font-text);
-    text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 2px solid var(--c-goldenrod);
+  border-radius: 25px;
+  font-family: var(--font-text);
+  text-transform: uppercase;
 }
 
 .button:hover {
-    background-color: var(--c-goldenrod);
- }
+  background-color: var(--c-goldenrod);
+}

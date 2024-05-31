@@ -1,31 +1,31 @@
 .commentContainer {
-    padding: 20px;
-    border-bottom: 1px solid gray;
+  padding: 20px;
+  border-bottom: 1px solid gray;
 }
 
 .author {
-    font-weight: 700;
-    font-style: italic;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .postedcomment {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .deleteComment {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .deleteComment button {
-    cursor: pointer;
-    padding: 5px 10px;
-    border: 2px solid var(--c-goldenrod);
-    border-radius: 25px;
-    font-family: var(--font-text);
-    text-transform: uppercase;
-    font-size: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 2px solid var(--c-goldenrod);
+  border-radius: 25px;
+  font-family: var(--font-text);
+  text-transform: uppercase;
+  font-size: 10px;
 }
 
 .deleteComment button:hover {
-    background-color: var(--c-goldenrod);
- }
+  background-color: var(--c-goldenrod);
+}

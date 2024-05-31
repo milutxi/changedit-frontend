@@ -15,16 +15,17 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     import.meta.env.VITE_BACKEND_URL + "/posts?page=" + page,
     {
       headers: {
-        'Accepts': 'application/json'
+        Accepts: "application/json",
       },
-    })
+    }
+  );
 
   const backendResponse = await response.json();
 
-  return { page, ...backendResponse }
+  return { page, ...backendResponse };
 
   // return await response.json()
-}
+};
 
 const Index = () => {
   const data = useLoaderData() as {

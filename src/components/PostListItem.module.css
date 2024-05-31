@@ -1,66 +1,66 @@
 .post {
   background-color: buttonface;
-    display: flex;
-    align-items: center;
-    border: 2px solid rgb(72, 62, 62);
-    border-radius: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    justify-content: space-between;
-  }
-  
-  .vote {
-    text-align: center;
-    margin-right: 10px;
-  }
-  
-  .vote button {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(72, 62, 62);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.vote {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.vote button {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.post-info h2 {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+}
+
+.post-url {
+  font-size: small;
+  color: #555;
+  margin-left: 10px;
+}
+
+.post-info p {
+  margin: 5px 0;
+}
+
+.post-info a {
+  text-decoration: none;
+}
+
+.post-info span {
+  font-weight: bold;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons a {
+  text-decoration: none;
+  color: black;
+}
+
+.post-info {
+  width: 80%;
+}
+
+@media (max-width: 500px) {
   .post-info h2 {
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-transform: uppercase;
-    text-overflow: ellipsis;
+    font-size: large;
   }
-  
-  .post-url {
-    font-size: small;
-    color: #555;
-    margin-left: 10px;
-  }
-  
-  .post-info p {
-    margin: 5px 0;
-  }
-  
-  .post-info a {
-    text-decoration: none;
-  }
-  
-  .post-info span {
-    font-weight: bold;
-  }
-
-  .icons {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .icons a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .post-info {
-    width: 80%;
-  }
-
-  @media (max-width: 500px) { 
-    .post-info h2 {
-      font-size: large;
-    }
-  }
+}
