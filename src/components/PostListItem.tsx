@@ -31,11 +31,12 @@ const PostListItem = ({ post }: { post: Post }) => {
           </span>
         )}
       </div>
-      <div>
-      <Link to={`/posts/${post._id}/edit`}><BiSolidEdit /></Link>
-    </div>
-      <button><AiTwotoneDelete /></button>
+      
+      <div className={classes.icons}>
+      <Link to={`/posts/${post._id}/edit`}><BiSolidEdit size={27}/></Link>
+      <button><AiTwotoneDelete size={20} /></button>
       </div>
+    </div>
     </div>
   )
 }
