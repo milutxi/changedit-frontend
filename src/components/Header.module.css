@@ -32,3 +32,11 @@
 .header-actions button:hover {
    background-color: var(--c-goldenrod);
 }
+
+@media (max-width: 500px) { 
+    .header-actions button {
+        font-size: x-small;
+        padding: 5px 10px;
+        margin-left: 15px;
+    }
+}

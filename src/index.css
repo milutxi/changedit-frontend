@@ -42,4 +42,6 @@ body {
   flex-direction: column;
   font-family: var(--font-text);
   min-height: 100vh;
+  max-width: 800px;
+  margin: auto;
   }
