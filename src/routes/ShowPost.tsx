@@ -4,7 +4,6 @@ import classes from "./ShowPost.module.css";
 import CommentForm from "../components/CommentForm";
 import VoteComponent from "../components/Vote";
 import CommentComponent from "../components/Comment";
-import { useState } from "react";
 import auth from "../lib/auth";
 
 export const loader = async (args: LoaderFunctionArgs) => {
@@ -26,7 +25,6 @@ export const loader = async (args: LoaderFunctionArgs) => {
 
 const ShowPost = () => {
   const post = useLoaderData() as Post;
-  const [comments, setComments] = useState(post.comments || []);
 
   const handleDeleteComment = async (commentId: string) => {
     try {
@@ -43,11 +41,6 @@ const ShowPost = () => {
           method: "DELETE",
         }
       );
-
-      setComments((prevComments) =>
-        prevComments.filter((comment) => comment._id !== commentId)
-      );
-      console.log("Comment deleted successfully:", commentId);
     } catch (error) {
       console.error("Error deleting comment:", error);
     }
