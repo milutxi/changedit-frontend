@@ -54,11 +54,10 @@ const PostEdit = () => {
   return (
     <div>
       <h2>EDIT POST</h2>
-      <Form method="put">
+      <Form method="put" encType="multipart/form-data">
         {error && (
           <p className={classes.errorp}>
-            <b className={classes.error}>Error:</b>
-            {error.message}
+            <b className={classes.error}>Error:</b>{error.message}
           </p>
         )}
         <div className={classes.formGroup}>

@@ -52,12 +52,12 @@ const ShowPost = () => {
         <VoteComponent post={post} />
         <div className={classes.postInfo}>
           {post.link ? (
-            <Link to={post.link}>
-              <h2>
-                {post.title}
-                <span className={classes.postUrl}>({post.link})</span>
-              </h2>
-            </Link>
+            <div>
+              <h2>{post.title}</h2>
+              <Link to={post.link}>
+                <span className={classes.postUrl}>{post.link}</span>
+              </Link>
+            </div>
           ) : (
             <h2>{post.title}</h2>
           )}

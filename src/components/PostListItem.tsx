@@ -26,26 +26,19 @@ const PostListItem = ({ post }: { post: Post }) => {
         <VoteComponent post={post} />
         <div className={classes.postInfo}>
           {post.link ? (
-            <Link to={post.link}>
-              <h2>
-                {post.title}
-                <span className={classes.postUrl}>({post.link})</span>
-              </h2>
-            </Link>
+            <div>
+              <Link to={`/posts/${post._id}`}>
+                <h2>{post.title}</h2>
+              </Link>
+              <span className={classes.postUrl}>{post.link}</span>
+            </div>
           ) : (
             <Link to={`/posts/${post._id}`}>
               <h2>{post.title}</h2>
             </Link>
           )}
-
           <p>by {post.author.userName}</p>
-          {post.link && (
-            <span>
-              <Link to={`/posts/${post._id}`}>Show post</Link>
-            </span>
-          )}
         </div>
-
         <div className={classes.icons}>
           <Link to={`/posts/${post._id}/edit`}>
             <BiSolidEdit size={27} />
